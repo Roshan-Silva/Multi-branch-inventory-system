@@ -13,4 +13,8 @@ public class Inventory : BaseEntity
     public int MinimumStockLevel { get; set; }
 
     public int ReorderLevel { get; set; }
+
+    public Branch Branch { get; set; } = null!;
+
+    public Product Product { get; set; } = null!;
 }

@@ -15,4 +15,8 @@ public class Product : BaseEntity
     public decimal UnitPrice { get; set; }
 
     public bool IsActive { get; set; } = true;
+
+    public Category Category { get; set; } = null!;
+
+    public ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
 }

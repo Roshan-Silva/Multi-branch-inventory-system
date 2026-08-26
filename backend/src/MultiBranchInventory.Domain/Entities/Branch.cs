@@ -15,4 +15,8 @@ public class Branch : BaseEntity
     public string? Email { get; set; }
 
     public bool IsActive { get; set; } = true;
+
+    public ICollection<User> Users { get; set; } = new List<User>();
+
+    public ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
 }
