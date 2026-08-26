@@ -1,0 +1,6 @@
+@MultiBranchInventory.Api_HostAddress = http://localhost:5296
+
+GET {{MultiBranchInventory.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

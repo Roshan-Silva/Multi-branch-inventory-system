@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MultiBranchInventory.Api/MultiBranchInventory.Api.csproj" />
+    <Project Path="src/MultiBranchInventory.Application/MultiBranchInventory.Application.csproj" />
+    <Project Path="src/MultiBranchInventory.Domain/MultiBranchInventory.Domain.csproj" />
+    <Project Path="src/MultiBranchInventory.Infrastructure/MultiBranchInventory.Infrastructure.csproj" />
+  </Folder>
+</Solution>
