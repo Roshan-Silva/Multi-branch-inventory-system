@@ -19,4 +19,10 @@ public class Branch : BaseEntity
     public ICollection<User> Users { get; set; } = new List<User>();
 
     public ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
+
+    public ICollection<PurchaseRequest> PurchaseRequests { get; set; }
+        = new List<PurchaseRequest>();
+
+    public ICollection<PurchaseOrder> PurchaseOrders { get; set; }
+        = new List<PurchaseOrder>();
 }

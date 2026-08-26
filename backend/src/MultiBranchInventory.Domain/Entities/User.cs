@@ -20,4 +20,25 @@ public class User : BaseEntity
     public bool IsActive { get; set; } = true;
 
     public Branch? Branch { get; set; }
+
+    public ICollection<PurchaseRequest> RequestedPurchaseRequests { get; set; }
+        = new List<PurchaseRequest>();
+
+    public ICollection<PurchaseRequest> ReviewedPurchaseRequests { get; set; }
+        = new List<PurchaseRequest>();
+
+    public ICollection<PurchaseOrder> CreatedPurchaseOrders { get; set; }
+        = new List<PurchaseOrder>();
+
+    public ICollection<PurchaseOrder> ApprovedPurchaseOrders { get; set; }
+        = new List<PurchaseOrder>();
+
+    public ICollection<GoodsReceivedNote> ReceivedGoodsNotes { get; set; }
+        = new List<GoodsReceivedNote>();
+
+    public ICollection<GoodsReceivedNote> ConfirmedGoodsNotes { get; set; }
+        = new List<GoodsReceivedNote>();
+
+    public ICollection<InventoryTransaction> InventoryTransactions { get; set; }
+        = new List<InventoryTransaction>();
 }
