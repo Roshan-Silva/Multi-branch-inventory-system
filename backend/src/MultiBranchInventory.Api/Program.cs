@@ -5,6 +5,9 @@ using Microsoft.IdentityModel.Tokens;
 using MultiBranchInventory.Application.Authentication.Interfaces;
 using MultiBranchInventory.Infrastructure.Authentication;
 using MultiBranchInventory.Infrastructure.Persistence;
+using MultiBranchInventory.Application.Branches.Interfaces;
+using MultiBranchInventory.Application.Branches.Services;
+using MultiBranchInventory.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +51,14 @@ if (string.IsNullOrWhiteSpace(jwtSettings.Key))
 builder.Services.AddScoped<IPasswordHasher, PasswordHasherService>();
 builder.Services.AddScoped<ITokenService, JwtTokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+
+// ======================================================
+// Branch Services
+// ======================================================
+
+builder.Services.AddScoped<IBranchRepository, BranchRepository>();
+builder.Services.AddScoped<IBranchService, BranchService>();
 
 
 // ======================================================
