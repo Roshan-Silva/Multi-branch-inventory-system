@@ -3,12 +3,17 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MultiBranchInventory.Application.Authentication.Interfaces;
+using MultiBranchInventory.Api.Services;
 using MultiBranchInventory.Infrastructure.Authentication;
 using MultiBranchInventory.Infrastructure.Persistence;
 using MultiBranchInventory.Application.Branches.Interfaces;
 using MultiBranchInventory.Application.Branches.Services;
 using MultiBranchInventory.Application.Categories.Interfaces;
 using MultiBranchInventory.Application.Categories.Services;
+using MultiBranchInventory.Application.Inventories.Interfaces;
+using MultiBranchInventory.Application.Inventories.Services;
+using MultiBranchInventory.Application.InventoryTransactions.Interfaces;
+using MultiBranchInventory.Application.InventoryTransactions.Services;
 using MultiBranchInventory.Application.Products.Interfaces;
 using MultiBranchInventory.Application.Products.Services;
 using MultiBranchInventory.Application.Suppliers.Interfaces;
@@ -59,6 +64,8 @@ if (string.IsNullOrWhiteSpace(jwtSettings.Key))
 builder.Services.AddScoped<IPasswordHasher, PasswordHasherService>();
 builder.Services.AddScoped<ITokenService, JwtTokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUserContext, HttpCurrentUserContext>();
 
 
 // ======================================================
@@ -91,6 +98,16 @@ builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
 builder.Services.AddScoped<ISupplierService, SupplierService>();
+
+
+// ======================================================
+// Inventory Services
+// ======================================================
+
+builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
+builder.Services.AddScoped<IInventoryService, InventoryService>();
+builder.Services.AddScoped<IInventoryTransactionRepository, InventoryTransactionRepository>();
+builder.Services.AddScoped<IInventoryTransactionService, InventoryTransactionService>();
 
 
 // ======================================================
