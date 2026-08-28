@@ -7,6 +7,8 @@ using MultiBranchInventory.Infrastructure.Authentication;
 using MultiBranchInventory.Infrastructure.Persistence;
 using MultiBranchInventory.Application.Branches.Interfaces;
 using MultiBranchInventory.Application.Branches.Services;
+using MultiBranchInventory.Application.Categories.Interfaces;
+using MultiBranchInventory.Application.Categories.Services;
 using MultiBranchInventory.Application.Users.Interfaces;
 using MultiBranchInventory.Application.Users.Services;
 using MultiBranchInventory.Infrastructure.Repositories;
@@ -61,6 +63,14 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 
 builder.Services.AddScoped<IBranchRepository, BranchRepository>();
 builder.Services.AddScoped<IBranchService, BranchService>();
+
+
+// ======================================================
+// Category Services
+// ======================================================
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
 // ======================================================
