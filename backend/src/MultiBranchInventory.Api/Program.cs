@@ -9,6 +9,10 @@ using MultiBranchInventory.Application.Branches.Interfaces;
 using MultiBranchInventory.Application.Branches.Services;
 using MultiBranchInventory.Application.Categories.Interfaces;
 using MultiBranchInventory.Application.Categories.Services;
+using MultiBranchInventory.Application.Products.Interfaces;
+using MultiBranchInventory.Application.Products.Services;
+using MultiBranchInventory.Application.Suppliers.Interfaces;
+using MultiBranchInventory.Application.Suppliers.Services;
 using MultiBranchInventory.Application.Users.Interfaces;
 using MultiBranchInventory.Application.Users.Services;
 using MultiBranchInventory.Infrastructure.Repositories;
@@ -71,6 +75,22 @@ builder.Services.AddScoped<IBranchService, BranchService>();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+
+// ======================================================
+// Product Services
+// ======================================================
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+
+// ======================================================
+// Supplier Services
+// ======================================================
+
+builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
 
 
 // ======================================================
