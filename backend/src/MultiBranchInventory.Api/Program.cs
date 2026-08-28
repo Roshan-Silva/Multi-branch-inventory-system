@@ -16,6 +16,10 @@ using MultiBranchInventory.Application.InventoryTransactions.Interfaces;
 using MultiBranchInventory.Application.InventoryTransactions.Services;
 using MultiBranchInventory.Application.Products.Interfaces;
 using MultiBranchInventory.Application.Products.Services;
+using MultiBranchInventory.Application.PurchaseOrders.Interfaces;
+using MultiBranchInventory.Application.PurchaseOrders.Services;
+using MultiBranchInventory.Application.PurchaseRequests.Interfaces;
+using MultiBranchInventory.Application.PurchaseRequests.Services;
 using MultiBranchInventory.Application.Suppliers.Interfaces;
 using MultiBranchInventory.Application.Suppliers.Services;
 using MultiBranchInventory.Application.Users.Interfaces;
@@ -108,6 +112,16 @@ builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<IInventoryTransactionRepository, InventoryTransactionRepository>();
 builder.Services.AddScoped<IInventoryTransactionService, InventoryTransactionService>();
+
+
+// ======================================================
+// Procurement Services
+// ======================================================
+
+builder.Services.AddScoped<IPurchaseRequestRepository, PurchaseRequestRepository>();
+builder.Services.AddScoped<IPurchaseRequestService, PurchaseRequestService>();
+builder.Services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
+builder.Services.AddScoped<IPurchaseOrderService, PurchaseOrderService>();
 
 
 // ======================================================
