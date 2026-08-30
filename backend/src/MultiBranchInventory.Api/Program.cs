@@ -12,6 +12,9 @@ using MultiBranchInventory.Application.Categories.Interfaces;
 using MultiBranchInventory.Application.Categories.Services;
 using MultiBranchInventory.Application.Inventories.Interfaces;
 using MultiBranchInventory.Application.Inventories.Services;
+using MultiBranchInventory.Application.Common.Interfaces;
+using MultiBranchInventory.Application.GoodsReceivedNotes.Interfaces;
+using MultiBranchInventory.Application.GoodsReceivedNotes.Services;
 using MultiBranchInventory.Application.InventoryTransactions.Interfaces;
 using MultiBranchInventory.Application.InventoryTransactions.Services;
 using MultiBranchInventory.Application.Products.Interfaces;
@@ -122,6 +125,9 @@ builder.Services.AddScoped<IPurchaseRequestRepository, PurchaseRequestRepository
 builder.Services.AddScoped<IPurchaseRequestService, PurchaseRequestService>();
 builder.Services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
 builder.Services.AddScoped<IPurchaseOrderService, PurchaseOrderService>();
+builder.Services.AddScoped<IGoodsReceivedNoteRepository, GoodsReceivedNoteRepository>();
+builder.Services.AddScoped<IGoodsReceivedNoteService, GoodsReceivedNoteService>();
+builder.Services.AddScoped<ITransactionManager, EfTransactionManager>();
 
 
 // ======================================================
